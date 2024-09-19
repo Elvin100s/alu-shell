@@ -1,3 +1,2 @@
-!/bin/bash
+#!/bin/bash
 ls script lists the contents of the current directory
-
