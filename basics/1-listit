@@ -1,2 +1,6 @@
 #!/bin/bash
-ls lists all contents of current directory
+# This script lists the contents of the current directory
+
+# Use the 'ls' command to list directory contents
+ls
+
