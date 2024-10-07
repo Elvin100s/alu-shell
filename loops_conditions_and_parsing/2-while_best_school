@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# This script displays "Best School" 10 times using an until loop
+# This script displays "Best School" 10 times using a while loop
 
-a=1  # Initialize the counter
+a=1  
 
-until [ $a -gt 10 ]
+while [ $a -le 10 ]
 do
-  echo "Best School"  # Print "Best School"
+  echo "Best School"  
   ((a++))  # Increment the counter
 done
