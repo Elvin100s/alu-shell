@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # manage_my_process: This script runs indefinitely and writes "I am alive!" to /tmp/my_process every 2 seconds.
 # 11-manage_my_process: This script manages the manage_my_process script.
 
