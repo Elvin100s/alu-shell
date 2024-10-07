@@ -4,16 +4,16 @@
 # displays good luck for the 8th loop iteration
 # displays Best School for the other iterations
 
-a=0
+a=0  # Initialize the counter
 
 while [ $a -lt 10 ]
 do
-	((a++))
+	((a++))  # Increment the counter
 	if [ $a -eq 4 ]; then
-		echo "bad luck"
+		echo "bad luck"  # Display for 4th iteration
 	elif [ $a -eq 8 ]; then
-		echo "good luck"
+		echo "good luck"  # Display for 8th iteration
 	else
-		echo "Best School"
+		echo "Best School"  # Display for other iterations
 	fi
 done
