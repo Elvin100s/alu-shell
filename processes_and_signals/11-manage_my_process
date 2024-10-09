@@ -6,13 +6,20 @@ if [ "$1" == "start" ]; then
     echo "$!" > /var/run/my_process.pid
     echo "manage_my_process started"
 elif [ "$1" == "stop" ]; then
-    pid=$(cat /var/run/my_process.pid)
-    kill "$pid"
-    rm /var/run/my_process.pid
-    echo "manage_my_process stopped"
+    if [ -f /var/run/my_process.pid ]; then
+        pid=$(cat /var/run/my_process.pid)
+        kill "$pid" 2>/dev/null
+        rm /var/run/my_process.pid
+        echo "manage_my_process stopped"
+    else
+        echo "No PID file found. Process may not be running."
+    fi
 elif [ "$1" == "restart" ]; then 
-    pid=$(cat /var/run/my_process.pid)
-    kill "$pid"
+    if [ -f /var/run/my_process.pid ]; then
+        pid=$(cat /var/run/my_process.pid)
+        kill "$pid" 2>/dev/null
+        rm /var/run/my_process.pid
+    fi
     ./manage_my_process &
     echo "$!" > /var/run/my_process.pid
     echo "manage_my_process restarted"
